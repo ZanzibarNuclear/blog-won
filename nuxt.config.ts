@@ -1,11 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  routeRules: {
+    '/api/search': { prerender: true }
+  },
   devtools: { enabled: true },
-  modules: ['@nuxt/content'],
+  modules: ['@nuxt/content', '@nuxt/image', '@nuxtjs/tailwindcss'],
+  image: {
+    format: ['webp']
+  },
   content: {
-    contentHead: true,
-    documentDriven: {
-      layoutFallbacks: ['theme']
+    markdown: {
+      remarkPlugins: ['remark-math'],
+      rehypePlugins: ['rehype-katex'],
     },
     highlight: {
       langs: [
@@ -22,13 +28,15 @@ export default defineNuxtConfig({
         'yaml',
       ],
       theme: {
-        default: 'catppuccin-macchiato',
+        default: 'catppuccin-frappe',
         dark: 'aurora-x'
       }
-    }
+    },
   },
-  routeRules: {
-    '/': { prerender: true }
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml', '/rss.xml', '/robots.txt'],
+    },
   },
   compatibilityDate: '2024-08-08'
 })
