@@ -1,9 +1,18 @@
 <template>
-  <div class="grid grid-cols-6 gap-4 px-4 py-4">
-    <header class="p-4 w-full rounded-xl col-span-6">
-      <p class="text-center font-bold text-slate-400">Basic Layout</p>
+  <div class="grid grid-cols-4 gap-4 px-4 py-4 leading-10">
+    <header class="p-4 w-full rounded-xl col-span-4">
+      <p class="text-center font-bold text-slate-400">Left Nav Layout</p>
     </header>
-    <div class="p-4 w-full rounded-xl col-span-4 col-start-2 leading=10">
+    <nav class="p-4 w-full rounded-xl">
+      <div v-for="item in navigation" :key="item._path" class="font-bold">{{ item.title }}
+        <ul v-if="item.children" class="font-normal">
+          <li v-for="child in item.children">
+            <NuxtLink :to="child._path">{{ child.title }}</NuxtLink>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="p-4 w-full rounded-xl col-span-3">
       <slot />
       <div class="grid grid-cols-2 mt-24 mb-28">
         <div v-if="before" class="text-center">
@@ -16,10 +25,11 @@
         <div v-else></div>
       </div>
     </div>
-    <footer class="p-4 w-full rounded-xl col-span-6">
+    <footer class="p-4 w-full rounded-xl col-span-4 mt-28 mb-16">
       <div class="text-center">©2024 Nuclear Ambitions LLC</div>
     </footer>
   </div>
+
 </template>
 
 <script lang="ts" setup>

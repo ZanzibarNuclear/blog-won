@@ -29,7 +29,7 @@ export default defineNuxtConfig({
         'yaml',
       ],
       theme: {
-        default: 'catppuccin-frappe',
+        default: 'night-owl',
         dark: 'aurora-x'
       }
     },
