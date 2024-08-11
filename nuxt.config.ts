@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     format: ['webp']
   },
   content: {
+    documentDriven: true,
     markdown: {
       remarkPlugins: ['remark-math'],
       rehypePlugins: ['rehype-katex'],
