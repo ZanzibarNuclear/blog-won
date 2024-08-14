@@ -1,15 +1,16 @@
 <template>
-  <div class="grid grid-cols-6 gap-4 px-4">
+  <div class="grid grid-cols-6 px-4">
     <header class="p-4 w-full rounded-xl col-span-6">
-      <div class="text-center font-bold text-3xl text-slate-400">World of Nuclear Blog & News</div>
+      <div class="text-center font-bold text-3xl text-slate-400 border-t-2 border-b-2">World of Nuclear Blog & News
+      </div>
       <nav class="text-center my-6">
-        <span v-for="item in sections" :key="item._path" class="mx-5 p-2 hover:bg-blue-200">
+        <span v-for="item in sections" :key="item._path" class="mx-5 p-2 hover:bg-blue-200 rounded-md">
           {{ item.icon }}
           <NuxtLink :to="item._path">{{ item.title }}</NuxtLink>
         </span>
       </nav>
     </header>
-    <div class="p-4 w-full rounded-xl col-span-4 col-start-2 leading=10">
+    <div class="w-full col-span-4 col-start-2">
       <slot />
       <div class="grid grid-cols-2 mt-24 mb-28">
         <div v-if="before" class="text-center">
@@ -46,12 +47,4 @@ const after = computed(() => {
 })
 </script>
 
-<style>
-h1 {
-  font-size: 2.0rem;
-}
-
-ul {
-  list-style: disc inside;
-}
-</style>
+<style></style>

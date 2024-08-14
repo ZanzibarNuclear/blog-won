@@ -4,6 +4,9 @@ export default defineNuxtConfig({
     '/api/search': { prerender: true }
   },
   devtools: { enabled: true },
+  colorMode: {
+
+  },
   modules: ['@nuxt/content', '@nuxt/image', '@nuxtjs/tailwindcss'],
   image: {
     format: ['webp']
@@ -30,7 +33,8 @@ export default defineNuxtConfig({
       ],
       theme: {
         default: 'night-owl',
-        dark: 'aurora-x'
+        dark: 'aurora-x',
+        sepia: 'monokai'
       }
     },
   },

@@ -1,6 +1,6 @@
 ---
 navigation:
-  title: 'Useful'
+  title: 'Links'
   icon: '💁🏽'
 ---
 
