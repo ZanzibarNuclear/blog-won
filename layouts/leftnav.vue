@@ -1,15 +1,11 @@
 <template>
-  <div class="grid grid-cols-4 gap-4 px-4 py-4 leading-10">
-    <header class="p-4 w-full rounded-xl col-span-4">
-      <p class="text-center font-bold text-slate-400">Left Nav Layout</p>
+  <div class="grid grid-cols-4 gap-4 px-4 pb-4">
+    <header class="pb-4 w-full rounded-xl col-span-4">
+      <NuxtImg src="/images/WoN-title-banner-v3.jpg" />
     </header>
-    <nav class="p-4 w-full rounded-xl">
-      <div v-for="item in navigation" :key="item._path" class="font-bold">{{ item.title }}
-        <ul v-if="item.children" class="font-normal">
-          <li v-for="child in item.children">
-            <NuxtLink :to="child._path">{{ child.title }}</NuxtLink>
-          </li>
-        </ul>
+    <nav class="px-4 w-full rounded-xl">
+      <div v-for="item in navigation" :key="item._path" class="font-bold mt-4">
+        <NuxtLink :to="item._path">{{ item.title }}</NuxtLink>
       </div>
     </nav>
     <div class="p-4 w-full rounded-xl col-span-3">
@@ -40,19 +36,20 @@ console.log('navigation\n', navigation.value)
 console.log('surround\n', surround.value)
 
 const before = computed(() => {
-  return surround.value[0]
+  return surround.value ? surround.value[0] : null
 })
 const after = computed(() => {
-  return surround.value[1]
+  return surround.value ? surround.value[1] : null
 })
 </script>
 
 <style>
 h1 {
-  font-size: 2.0rem;
+  margin-top: 1.0rem;
+  margin-bottom: 0.5rem;
 }
 
-ul {
-  list-style: disc inside;
+p {
+  margin: 1.0rem 0;
 }
 </style>

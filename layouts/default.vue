@@ -1,7 +1,13 @@
 <template>
-  <div class="grid grid-cols-6 gap-4 px-4 py-4">
+  <div class="grid grid-cols-6 gap-4 px-4">
     <header class="p-4 w-full rounded-xl col-span-6">
-      <p class="text-center font-bold text-slate-400">Basic Layout</p>
+      <div class="text-center font-bold text-3xl text-slate-400">World of Nuclear Blog & News</div>
+      <nav class="text-center my-6">
+        <span v-for="item in sections" :key="item._path" class="mx-5 p-2 hover:bg-blue-200">
+          {{ item.icon }}
+          <NuxtLink :to="item._path">{{ item.title }}</NuxtLink>
+        </span>
+      </nav>
     </header>
     <div class="p-4 w-full rounded-xl col-span-4 col-start-2 leading=10">
       <slot />
@@ -29,11 +35,14 @@ console.log('page\n', page.value)
 console.log('navigation\n', navigation.value)
 console.log('surround\n', surround.value)
 
+const sections = computed(() => {
+  return navigation.value
+})
 const before = computed(() => {
-  return surround.value[0]
+  return surround.value ? surround.value[0] : null
 })
 const after = computed(() => {
-  return surround.value[1]
+  return surround.value ? surround.value[1] : null
 })
 </script>
 
