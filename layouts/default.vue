@@ -13,14 +13,12 @@
     <div class="w-full col-span-4 col-start-2">
       <slot />
       <div class="grid grid-cols-2 mt-24 mb-28">
-        <div v-if="before" class="text-center">
-          << <NuxtLink :to="before._path">{{ before.title }}</NuxtLink>
+        <div class="text-center">
+          <NuxtLink v-if="prev" :to="prev._path">⬅ {{ prev.title }}</NuxtLink>
         </div>
-        <div v-else></div>
-        <div v-if="after" class="text-center">
-          <NuxtLink :to="after._path">{{ after.title }}</NuxtLink> >>
+        <div class="text-center">
+          <NuxtLink v-if="next" :to="next._path"> {{ next.title }} ➡</NuxtLink>
         </div>
-        <div v-else></div>
       </div>
     </div>
     <footer class="p-4 w-full rounded-xl col-span-6">
@@ -30,20 +28,9 @@
 </template>
 
 <script lang="ts" setup>
-const { navigation, page, surround } = useContent()
-
-console.log('page\n', page.value)
-console.log('navigation\n', navigation.value)
-console.log('surround\n', surround.value)
-
+const { navigation, page, surround, next, prev } = useContent()
 const sections = computed(() => {
   return navigation.value
-})
-const before = computed(() => {
-  return surround.value ? surround.value[0] : null
-})
-const after = computed(() => {
-  return surround.value ? surround.value[1] : null
 })
 </script>
 
