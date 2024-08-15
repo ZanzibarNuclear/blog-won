@@ -24,4 +24,7 @@
   pre {
     @apply bg-[#011627] dark:bg-[#07090F] my-4;
   }
+  li a {
+    @apply underline text-blue-700;
+  }
 }
