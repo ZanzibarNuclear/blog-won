@@ -1,8 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  routeRules: {
-    '/api/search': { prerender: true }
-  },
   devtools: { enabled: true },
   modules: ['@nuxt/content', '@nuxt/image', '@nuxtjs/tailwindcss'],
   image: {
@@ -33,11 +30,6 @@ export default defineNuxtConfig({
         dark: 'aurora-x',
         sepia: 'monokai'
       }
-    },
-  },
-  nitro: {
-    prerender: {
-      routes: ['/sitemap.xml', '/rss.xml', '/robots.txt'],
     },
   },
   compatibilityDate: '2024-08-08'
