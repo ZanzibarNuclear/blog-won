@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     markdown: {
       remarkPlugins: ['remark-math'],
       rehypePlugins: ['rehype-katex'],
+      anchorLinks: false
     },
     highlight: {
       langs: [
