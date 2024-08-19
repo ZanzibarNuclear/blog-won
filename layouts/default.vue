@@ -6,7 +6,8 @@
           <img src="/images/logo-sq-smooth.jpg" width="100px" class="logo-above" />
         </NuxtLink>
       </div>
-      <div class="title-bar text-center font-bold text-3xl text-slate-400 border-t-2 border-b-2">World of Nuclear News &
+      <div class="title-bar text-center font-bold text-3xl text-slate-400 border-t-2 border-b-2">World of Nuclear
+        &ndash; News &
         Perspective
       </div>
       <nav class="text-center my-6">
