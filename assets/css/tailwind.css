@@ -12,6 +12,9 @@
   p {
     @apply my-6;
   }
+  a {
+    @apply text-nuclear-blue-800 hover:text-nuclear-blue-500 visited:text-nuclear-blue-800 underline;
+  }
   ul {
     @apply list-disc list-inside;
   }
@@ -24,7 +27,7 @@
   pre {
     @apply bg-[#011627] dark:bg-[#07090F] my-4;
   }
-  li a {
-    @apply underline text-blue-700;
+  .item-plain-anchor {
+    @apply no-underline  text-nuclear-blue-800 hover:text-nuclear-blue-800 visited:text-nuclear-blue-800;
   }
 }
