@@ -1,23 +1,22 @@
 <template>
   <div class="grid grid-cols-6 px-4 min-w-96">
-    <header class="p-4 w-full rounded-xl col-span-6">
-      <div class="logo-container">
+    <header class="app-header fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-10">
+      <div class="max-w-7xl mx-auto mt-4 px-4 py-3 flex items-center relative">
         <NuxtLink to="https://worldofnuclear.com">
-          <img src="/images/logo-sq-smooth.jpg" width="100px" class="logo-above" />
+          <NuxtImg src="/images/logo-sq-smooth.jpg" alt="World of Nuclear Logo" class="w-12 h-12 -mt-4" />
         </NuxtLink>
+        <h1 class="absolute left-1/2 -translate-x-1/2 text-x3l font-bold text-[nuclear-blue]">World of Nuclear &ndash;
+          News & Perspective
+        </h1>
       </div>
-      <div class="title-bar text-center font-bold text-3xl text-slate-400 border-t-2 border-b-2">World of Nuclear
-        &ndash; News &
-        Perspective
-      </div>
-      <nav class="text-center my-6">
+      <nav class="text-center mb-2">
         <span v-for="item in sections" :key="item._path" class="mx-5 p-2 hover:bg-blue-200 rounded-md">
           {{ item.icon }}
           <NuxtLink :to="item._path">{{ item.title }}</NuxtLink>
         </span>
       </nav>
     </header>
-    <div class="w-full col-span-4 col-start-2">
+    <div class="w-full col-span-4 col-start-2 mt-[100px]">
       <slot />
       <div class="grid grid-cols-2 mt-24 mb-28">
         <div class="text-center">
@@ -61,5 +60,19 @@ const sections = computed(() => {
 
 .logo-container {
   position: relative;
+}
+
+.app-header {
+  transition: top 0.3s;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  z-index: 10;
+
+  background-image: url('/images/lush-landscape-1024x100.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 </style>
