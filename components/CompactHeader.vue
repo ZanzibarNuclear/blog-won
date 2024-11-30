@@ -5,11 +5,14 @@
       <h1 class="absolute left-1/2 -translate-x-1/2 text-x3l font-bold text-[nuclear-blue]">Flux on World of Nuclear
       </h1>
     </div>
+    <CompactMenu :links="links" />
   </header>
 </template>
 
 <script lang="ts" setup>
-
+defineProps<{
+  links: { label: string; icon: string; to: string }[]
+}>()
 </script>
 
 <style>
