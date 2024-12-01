@@ -5,15 +5,24 @@
         <NuxtLink to="https://worldofnuclear.com">
           <NuxtImg src="/images/logo-sq-smooth.jpg" alt="World of Nuclear Logo" class="w-12 h-12 -mt-4" />
         </NuxtLink>
-        <h1 class="absolute left-1/2 -translate-x-1/2 text-x3l font-bold text-[nuclear-blue]">World of Nuclear &ndash;
-          News & Perspective
+        <h1
+          class="absolute left-1/2 -translate-x-1/2 text-x3l font-bold text-[nuclear-blue] bg-[#f6f2eb]/30 backdrop-blur-sm rounded-lg p-1">
+          World of Nuclear
         </h1>
       </div>
-      <nav class="text-center mb-2">
-        <span v-for="item in sections" :key="item._path" class="mx-5 p-2 hover:bg-blue-200 rounded-md">
-          {{ item.icon }}
-          <NuxtLink :to="item._path">{{ item.title }}</NuxtLink>
-        </span>
+
+      <nav>
+        <div class="mt-7 ml-4">
+          <UButton icon="i-ph-list" color="gray" variant="ghost" @click="isOpen = true" />
+        </div>
+        <UModal v-model="isOpen">
+          <UCard>
+            <div v-for="item in sections" :key="item._path" class="mx-5 p-2 hover:bg-blue-200 rounded-md">
+              {{ item.icon }}
+              <NuxtLink :to="item._path">{{ item.title }}</NuxtLink>
+            </div>
+          </UCard>
+        </UModal>
       </nav>
     </header>
     <div class="w-full col-span-4 col-start-2 mt-[100px]">
@@ -35,9 +44,15 @@
 
 <script lang="ts" setup>
 const { navigation, next, prev } = useContent()
-const sections = computed(() => {
-  return navigation.value
+const sections = computed(() => navigation.value)
+const menuItems = computed(() => {
+  return navigation.value.map((item) => ({
+    icon: item.icon,
+    label: item.title,
+    to: item._path,
+  }))
 })
+const isOpen = ref(false)
 </script>
 
 <style scoped>
