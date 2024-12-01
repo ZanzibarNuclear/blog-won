@@ -4,19 +4,19 @@
 
 @layer base {
   h1 {
-    @apply text-3xl mt-2 mb-6 font-bold text-[#016aa3];
+    @apply text-3xl mt-2 mb-6 font-bold text-nuclear-blue-800;
   }
   h2 {
     @apply text-2xl my-4 font-bold;
   }
   h3 {
-  @apply text-xl my-4 text-[#016aa3];
+    @apply text-xl my-4 text-nuclear-blue-800;
   }
   p {
     @apply my-6;
   }
   a {
-    @apply text-nuclear-blue-800 hover:text-nuclear-blue-500 visited:text-nuclear-blue-800 underline;
+    @apply underline text-nuclear-blue-800 hover:text-nuclear-blue-500 visited:text-nuclear-blue-800;
   }
   ul {
     @apply list-disc list-inside;
