@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/content', '@nuxt/image', '@nuxt/ui'],
+  css: ['@/assets/css/font.css', '@/assets/css/tailwind.css'],
   image: {
     format: ['webp']
   },
