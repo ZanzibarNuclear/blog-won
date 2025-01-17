@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxt/content', '@nuxt/image', '@nuxtjs/tailwindcss'],
+  modules: ['@nuxt/content', '@nuxt/image', '@nuxt/ui'],
+  css: ['@/assets/css/font.css', '@/assets/css/tailwind.css'],
   image: {
     format: ['webp']
   },

@@ -4,19 +4,22 @@
 
 @layer base {
   h1 {
-    @apply text-3xl mt-2 mb-6 font-bold text-[#016aa3];
+    @apply font-heading text-3xl my-6 font-bold text-heroic-navy dark:text-heroic-cherenkov;
   }
   h2 {
-    @apply text-2xl my-4 font-bold;
+    @apply font-heading-slab text-2xl my-4 font-bold text-heroic-navy dark:text-heroic-cherenkov;
   }
   h3 {
-  @apply text-xl my-4 text-[#016aa3];
+    @apply font-heading-slab text-xl my-4 font-bold text-heroic-navy dark:text-heroic-cherenkov;
+  }
+  h4 {
+    @apply font-body text-lg my-4 font-bold text-heroic-navy dark:text-heroic-cherenkov;
   }
   p {
     @apply my-6;
   }
   a {
-    @apply text-nuclear-blue-800 hover:text-nuclear-blue-500 visited:text-nuclear-blue-800 underline;
+    @apply text-nuclear-800 dark:text-heroic-cherenkov dark:hover:text-nuclear-300 hover:text-nuclear-500 visited:text-nuclear-800;
   }
   ul {
     @apply list-disc list-inside;
@@ -31,6 +34,6 @@
     @apply bg-[#011627] dark:bg-[#07090F] my-4;
   }
   .item-plain-anchor {
-    @apply no-underline  text-nuclear-blue-800 hover:text-nuclear-blue-800 visited:text-nuclear-blue-800;
+    @apply no-underline  text-nuclear-800 hover:text-nuclear-800 visited:text-nuclear-800;
   }
 }
