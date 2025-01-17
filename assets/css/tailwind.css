@@ -19,7 +19,7 @@
     @apply my-6;
   }
   a {
-    @apply underline text-nuclear-800 hover:text-nuclear-500 visited:text-nuclear-800;
+    @apply text-nuclear-800 dark:text-heroic-cherenkov dark:hover:text-nuclear-300 hover:text-nuclear-500 visited:text-nuclear-800;
   }
   ul {
     @apply list-disc list-inside;

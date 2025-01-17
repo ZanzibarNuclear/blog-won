@@ -29,23 +29,22 @@
     <div class="w-full col-span-4 col-start-2">
       <slot />
       <div class="grid grid-cols-2 mt-24 mb-28">
-        <div class="text-center">
-          <NuxtLink
-            v-if="prev"
-            :to="prev._path"
-            class="dark:text-nuclear-400 dark:hover:text-nuclear-200"
-            >⬅ {{ prev.title }}</NuxtLink
-          >
-        </div>
-        <div class="text-center">
-          <NuxtLink
-            v-if="next"
-            :to="next._path"
-            class="dark:text-nuclear-400 dark:hover:text-nuclear-200"
-          >
-            {{ next.title }} ➡</NuxtLink
-          >
-        </div>
+        <UButton
+          v-if="prev"
+          variant="ghost"
+          block
+          :to="prev._path"
+          icon="i-ph-arrow-left"
+          :label="prev.title"
+        />
+        <UButton
+          v-if="next"
+          variant="ghost"
+          block
+          :to="next._path"
+          trailing-icon="i-ph-arrow-right"
+          :label="next.title"
+        />
       </div>
     </div>
     <SimpleFooter />
