@@ -37,6 +37,9 @@
           icon="i-ph-arrow-left"
           :label="prev.title"
         />
+        <div v-else class="text-center">
+          <UIcon name="i-ph-hand-waving-duotone" class="text-2xl text-heroic-cherenkov" />
+        </div>
         <UButton
           v-if="next"
           variant="ghost"
@@ -45,6 +48,9 @@
           trailing-icon="i-ph-arrow-right"
           :label="next.title"
         />
+        <div v-else class="text-center">
+          <UIcon name="i-ph-hand-waving-duotone" class="text-2xl text-heroic-cherenkov" />
+        </div>
       </div>
     </div>
     <SimpleFooter />
