@@ -29,7 +29,9 @@ const next = computed(() => {
     <ContentRenderer :value="post" />
   </div>
   <div v-else>
-    <h2>Post not found. Try another.</h2>
+    <h2 class="text-center my-16 text-uranium-orange dark:text-uranium-orange">
+      Post not found. Try another.
+    </h2>
   </div>
   <div class="grid grid-cols-2 mt-24 mb-12">
     <UButton

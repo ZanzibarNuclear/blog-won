@@ -10,7 +10,6 @@ export default defineNuxtConfig({
     preview: {
       api: 'https://api.nuxt.studio/'
     },
-    documentDriven: true,
     markdown: {
       toc: {
         depth: 3, // include h3 headings
