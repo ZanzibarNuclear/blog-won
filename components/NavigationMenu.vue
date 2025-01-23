@@ -4,9 +4,14 @@
   >
     <!-- Desktop Navigation -->
     <div class="flex justify-between items-center">
-      <button class="md:hidden block" @click="toggleMenu" aria-label="Toggle Menu">
-        <span class="hamburger"></span>
-      </button>
+      <UButton
+        class="md:hidden block pt-2"
+        @click="toggleMenu"
+        aria-label="Toggle Menu"
+        icon="i-ph-list-duotone"
+        variant="ghost"
+        size="xl"
+      />
       <div
         class="hidden md:flex md:items-center mx-auto justify-between space-x-4"
         v-if="!isMobileMenuOpen"
@@ -17,6 +22,7 @@
           :label="item.title"
           :route="item.path"
         />
+        <DarkToggle />
       </div>
     </div>
 
@@ -33,6 +39,7 @@
           :route="item.path"
           @picked-item="closeMenu"
         />
+        <DarkToggle />
       </div>
     </transition>
   </nav>
@@ -54,30 +61,4 @@ const { data: navigation } = await useAsyncData('navigation', () => {
 })
 </script>
 
-<style scoped>
-.hamburger {
-  display: block;
-  width: 24px;
-  height: 3px;
-  @apply bg-heroic-cherenkov;
-  position: relative;
-}
-
-.hamburger::before,
-.hamburger::after {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 3px;
-  @apply bg-heroic-cherenkov;
-  position: absolute;
-}
-
-.hamburger::before {
-  top: -8px;
-}
-
-.hamburger::after {
-  top: 8px;
-}
-</style>
+<style scoped></style>
