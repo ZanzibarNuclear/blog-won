@@ -7,7 +7,7 @@
   "author": "Nuclear Ambitions LLC",
   "main": "./nuxt.config.ts",
   "scripts": {
-    "build": "nuxi build",
+    "build": "nuxi build --preset=cloudflare_pages",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview"
