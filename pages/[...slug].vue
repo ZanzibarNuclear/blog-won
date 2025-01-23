@@ -6,7 +6,6 @@ const { data: post } = await useAsyncData(() => {
 const { data: surround } = await useAsyncData('surround', () => {
   return queryCollectionItemSurroundings('content', route.path)
 })
-console.log('surround: ', surround.value)
 const prev = computed(() => {
   if (surround.value && surround.value[0]) {
     return surround.value[0]

@@ -21,7 +21,6 @@ const { data: posts } = await useAsyncData(route.path, () =>
     .order('date', 'DESC')
     .all(),
 )
-console.log(posts.value)
 const justPosts = computed(() => {
   return posts.value?.filter((post) => post.path != route.path)
 })

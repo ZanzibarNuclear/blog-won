@@ -10,33 +10,40 @@ export default defineNuxtConfig({
     preview: {
       api: 'https://api.nuxt.studio/'
     },
-    markdown: {
-      toc: {
-        depth: 3, // include h3 headings
+    build: {
+      markdown: {
+        toc: {
+          depth: 3, // include h3 headings
+        },
+        remarkPlugins: {
+          'remark-math': {}
+        },
+        rehypePlugins: {
+          'rehype-katex': {
+            anchorLinks: false
+          },
+        },
+        highlight: {
+          langs: [
+            'javascript',
+            'js',
+            'json',
+            'md',
+            'python',
+            'shell',
+            'sql',
+            'ts',
+            'typescript',
+            'vue',
+            'yaml',
+          ],
+          theme: {
+            default: 'night-owl',
+            dark: 'aurora-x',
+            sepia: 'monokai'
+          }
+        },
       },
-      remarkPlugins: ['remark-math'],
-      rehypePlugins: ['rehype-katex'],
-      anchorLinks: false
-    },
-    highlight: {
-      langs: [
-        'javascript',
-        'js',
-        'json',
-        'md',
-        'python',
-        'shell',
-        'sql',
-        'ts',
-        'typescript',
-        'vue',
-        'yaml',
-      ],
-      theme: {
-        default: 'night-owl',
-        dark: 'aurora-x',
-        sepia: 'monokai'
-      }
     },
   },
   compatibilityDate: '2024-08-08'

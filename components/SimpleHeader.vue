@@ -29,5 +29,4 @@
 const { data: navigation } = await useAsyncData('navigation', () => {
   return queryCollectionNavigation('content')
 })
-console.log(navigation.value)
 </script>
