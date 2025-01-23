@@ -36,4 +36,7 @@
   .item-plain-anchor {
     @apply no-underline  text-nuclear-800 hover:text-nuclear-800 visited:text-nuclear-800;
   }
+  code {
+    @apply text-sm;
+  }
 }

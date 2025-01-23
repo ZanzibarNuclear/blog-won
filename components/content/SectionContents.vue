@@ -1,25 +1,27 @@
 <template>
   <div>
-    <div
-      v-for="page in sectionPages"
-      :key="page._path"
-      class="p-2 my-2 border border-nuclear-800 bg-heroic-uranium hover:bg-nuclear-300"
-    >
-      <NuxtLink class="item-plain-anchor" :to="page._path">{{ page.title }}</NuxtLink>
+    <div v-for="page in justPosts" :key="page.path" class="p-2 my-2 border border-heroic-black">
+      {{ page.date }}
+      <NuxtLink :to="page.path">{{ page.title }}</NuxtLink>
+      <div class="text-sm py-2 text-uranium-orange dark:text-uranium-ore-bright">
+        {{ page.description }}
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-const { navigation } = useContent()
-const props = defineProps(['sectionName'])
+const route = useRoute()
 
-console.log(navigation.value)
-
-const pagesListIndex = navigation.value.findIndex((item) => item.title === props.sectionName)
-const sectionPages = computed(() => {
-  return navigation.value[pagesListIndex].children.filter(
-    (page) => page.title !== props.sectionName,
-  )
+console.log(route)
+const { data: posts } = await useAsyncData(route.path, () =>
+  queryCollection('content')
+    .select('title', 'description', 'path', 'id', 'date')
+    .where('path', 'LIKE', route.path + '%')
+    .order('date', 'DESC')
+    .all(),
+)
+const justPosts = computed(() => {
+  return posts.value?.filter((post) => post.path != route.path)
 })
 </script>
