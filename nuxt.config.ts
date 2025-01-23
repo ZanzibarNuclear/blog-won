@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/content', '@nuxt/image', '@nuxt/ui'],
-  css: ['@/assets/css/font.css', '@/assets/css/tailwind.css'],
+  css: ['@/assets/css/font.css', '@/assets/css/tailwind.css', '@/assets/css/katex.0.16.8.min.css'],
   image: {
     format: ['webp']
   },
@@ -16,11 +16,10 @@ export default defineNuxtConfig({
           depth: 3, // include h3 headings
         },
         remarkPlugins: {
-          'remark-math': {}
+          'remark-math': {},
         },
         rehypePlugins: {
           'rehype-katex': {
-            anchorLinks: false
           },
         },
         highlight: {
