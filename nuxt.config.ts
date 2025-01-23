@@ -4,7 +4,8 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content', '@nuxt/image', '@nuxt/ui'],
   css: ['@/assets/css/font.css', '@/assets/css/tailwind.css', '@/assets/css/katex.0.16.8.min.css'],
   image: {
-    format: ['webp']
+    format: ['webp'],
+    provider: 'ipx'
   },
   content: {
     preview: {
@@ -49,8 +50,13 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'cloudflare-pages',
     prerender: {
-      autoSubfolderIndex: false
+      autoSubfolderIndex: false,
+      routes: ['/'],
+      crawlLinks: true
     }
   },
-  compatibilityDate: '2024-08-08'
+  experimental: {
+    appManifest: false,
+  },
+  compatibilityDate: '2025-01-23'
 })

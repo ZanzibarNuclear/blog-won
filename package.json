@@ -1,9 +1,9 @@
 {
   "name": "wonblog",
-  "description": "Blog for World of Nuclear",
+  "description": "Blogging for Zanzibar's World of Nuclear Energy",
   "license": "GPL-3.0-only",
   "type": "module",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "Nuclear Ambitions LLC",
   "main": "./nuxt.config.ts",
   "scripts": {
@@ -11,6 +11,10 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview"
+  },
+  "engines": {
+    "node": ">=18",
+    "npm": ">=8"
   },
   "dependencies": {
     "@iconify-json/ph": "^1.2.2",
