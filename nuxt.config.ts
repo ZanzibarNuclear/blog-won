@@ -27,6 +27,7 @@ export default defineNuxtConfig({
             'javascript',
             'js',
             'json',
+            'kotlin',
             'md',
             'python',
             'shell',
@@ -37,8 +38,8 @@ export default defineNuxtConfig({
             'yaml',
           ],
           theme: {
-            default: 'night-owl',
-            dark: 'aurora-x',
+            default: 'catppuccin-latte',
+            dark: 'catppuccin-macchiato',
             sepia: 'monokai'
           }
         },
