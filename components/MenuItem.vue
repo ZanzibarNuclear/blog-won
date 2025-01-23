@@ -2,11 +2,11 @@
   <div>
     <!-- Main Menu Item -->
     <UButton
-      :to="route"
+      @click="onClick"
       :label="label"
       :icon="icon"
       variant="outline"
-      class="hover:bg-gray-700 px-4 py-2 rounded-lg"
+      class="px-4 py-2 rounded-lg"
     >
     </UButton>
   </div>
@@ -24,14 +24,13 @@ const props = defineProps({
     type: String,
   },
 })
+const emit = defineEmits(['pickedItem'])
 
-// const isPopupOpen = ref(false)
-// const togglePopup = () => {
-//   isPopupOpen.value = !isPopupOpen.value
-// }
-// const closePopup = () => {
-//   isPopupOpen.value = false
-// }
+const onClick = () => {
+  console.log('clicked menu item ' + props.route)
+  emit('pickedItem')
+  navigateTo(props.route)
+}
 </script>
 
 <style scoped>
