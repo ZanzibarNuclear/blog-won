@@ -55,7 +55,7 @@ export default defineNuxtConfig({
     }
   },
   experimental: {
-    appManifest: false,
+    appManifest: true,
   },
   compatibilityDate: '2025-01-23'
 })
